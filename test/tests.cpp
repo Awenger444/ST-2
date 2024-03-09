@@ -26,10 +26,6 @@ TEST(CircleTests, checkHugeRadius) {
     EXPECT_DOUBLE_EQ(c.getArea(), 6810.14 * 6810.14 * PI);
 }
 
-TEST(CircleTests, checkNegativeRadius) {
-    ASSERT_ANY_THROW(Circle::Circle(-1.0));
-}
-
 TEST(CircleTests, checkSetZeroRadius) {
     Circle c;
     c.setRadius(0.0);
@@ -55,7 +51,8 @@ TEST(CircleTests, checkSetHugeRadius) {
 }
 
 TEST(CircleTests, checkSetNegativeRadius) {
-    ASSERT_ANY_THROW(Circle::Circle().setRadius(-1.0));
+    Circle c = Circle(1.0);
+    ASSERT_ANY_THROW(c.setRadius(-1.0));
 }
 
 TEST(CircleTests, checkSetZeroFerence) {
@@ -83,7 +80,8 @@ TEST(CircleTests, checkSetHugeFerence) {
 }
 
 TEST(CircleTests, checkSetNegativeFerence) {
-    ASSERT_ANY_THROW(Circle::Circle().setFerence(-1.0));
+    Circle c = Circle(1.0);
+    ASSERT_ANY_THROW(c.setFerence(-1.0));
 }
 
 TEST(CircleTests, checkSetZeroArea) {
@@ -111,7 +109,8 @@ TEST(CircleTests, checkSetHugeArea) {
 }
 
 TEST(CircleTests, checkSetNegativeArea) {
-    ASSERT_ANY_THROW(Circle::Circle().setArea(-1.0));
+    Circle c = Circle(1.0);
+    ASSERT_ANY_THROW(c.setArea(-1.0));
 }
 
 TEST(TasksTests, RopeTaskNegativeParams) {

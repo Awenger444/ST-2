@@ -12,7 +12,6 @@ class Circle {
     void countFerence();
     void countArea();
  public:
-    Circle();
     explicit Circle(double r);
 
     void setRadius(double r);

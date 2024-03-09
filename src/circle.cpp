@@ -3,12 +3,6 @@
 #include <stdexcept>
 #include "circle.h"
 
-Circle::Circle() {
-    this->radius = 0.0;
-    this->ference = 0.0;
-    this->area = 0.0;
-}
-
 Circle::Circle(double r) {
     checkOnNegative(r);
     this->radius = r;
