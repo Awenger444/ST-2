@@ -27,7 +27,7 @@ TEST(CircleTests, checkHugeRadius) {
 }
 
 TEST(CircleTests, checkNegativeRadius) {
-    EXPECT_ANY_THROW(Circle::Circle(-1));
+    ASSERT_ANY_THROW(Circle::Circle(-1.0));
 }
 
 TEST(CircleTests, checkSetZeroRadius) {
@@ -55,7 +55,7 @@ TEST(CircleTests, checkSetHugeRadius) {
 }
 
 TEST(CircleTests, checkSetNegativeRadius) {
-    EXPECT_ANY_THROW(Circle::Circle().setRadius(-1.0));
+    ASSERT_ANY_THROW(Circle::Circle().setRadius(-1.0));
 }
 
 TEST(CircleTests, checkSetZeroFerence) {
@@ -83,7 +83,7 @@ TEST(CircleTests, checkSetHugeFerence) {
 }
 
 TEST(CircleTests, checkSetNegativeFerence) {
-    EXPECT_ANY_THROW(Circle::Circle().setFerence(-1.0));
+    ASSERT_ANY_THROW(Circle::Circle().setFerence(-1.0));
 }
 
 TEST(CircleTests, checkSetZeroArea) {
@@ -111,11 +111,11 @@ TEST(CircleTests, checkSetHugeArea) {
 }
 
 TEST(CircleTests, checkSetNegativeArea) {
-    EXPECT_ANY_THROW(Circle::Circle().setArea(-1.0));
+    ASSERT_ANY_THROW(Circle::Circle().setArea(-1.0));
 }
 
 TEST(TasksTests, RopeTaskNegativeParams) {
-    EXPECT_ANY_THROW(RopeTask(-1));
+    ASSERT_ANY_THROW(RopeTask(-1.0));
 }
 
 TEST(TasksTests, RopeTaskSmall) {
@@ -131,7 +131,7 @@ TEST(TasksTests, RopeTaskHuge) {
 }
 
 TEST(TasksTests, SwimmingPoolTaskNegativeParams) {
-    EXPECT_ANY_THROW(SwimmingPoolTask(-1.0, -1.0));
+    ASSERT_ANY_THROW(SwimmingPoolTask(-1.0, -1.0));
 }
 
 TEST(TasksTests, SwimmingPoolTaskSmall) {
