@@ -5,7 +5,7 @@ double RopeTask(double extraLength) {
     const double eRadius = 6378.1;
     Circle oldCircleLength = Circle(eRadius);
     Circle newCircleLength = Circle(eRadius + extraLength / 1000);
-    return oldCircleLength.getArea() - newCircleLength.getArea();
+    return newCircleLength.getArea() - oldCircleLength.getArea();
 }
 
 double SwimmingPoolTask(double poolRadius, double roadWidth) {
