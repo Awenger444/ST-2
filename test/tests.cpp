@@ -6,7 +6,7 @@
 const double PI = 3.14159;
 
 TEST(CircleTests, checkNoRadius) {
-    Circle c;
+    Circle c = Circle(1.0);
     EXPECT_DOUBLE_EQ(c.getRadius(), 0.0);
     EXPECT_DOUBLE_EQ(c.getFerence(), 0.0);
     EXPECT_DOUBLE_EQ(c.getArea(), 0.0);
@@ -27,7 +27,7 @@ TEST(CircleTests, checkHugeRadius) {
 }
 
 TEST(CircleTests, checkSetZeroRadius) {
-    Circle c;
+    Circle c = Circle(1.0);
     c.setRadius(0.0);
     EXPECT_DOUBLE_EQ(c.getRadius(), 0.0);
     EXPECT_DOUBLE_EQ(c.getFerence(), 0.0);
@@ -35,7 +35,7 @@ TEST(CircleTests, checkSetZeroRadius) {
 }
 
 TEST(CircleTests, checkSetSmallRadius) {
-    Circle c;
+    Circle c = Circle(1.0);
     c.setRadius(11.0);
     EXPECT_DOUBLE_EQ(c.getRadius(), 11.0);
     EXPECT_DOUBLE_EQ(c.getFerence(), 11.0 * PI * 2);
@@ -43,7 +43,7 @@ TEST(CircleTests, checkSetSmallRadius) {
 }
 
 TEST(CircleTests, checkSetHugeRadius) {
-    Circle c;
+    Circle c = Circle(1.0);
     c.setRadius(1429.3);
     EXPECT_DOUBLE_EQ(c.getRadius(), 1429.3);
     EXPECT_DOUBLE_EQ(c.getFerence(), 1429.3 * PI * 2);
@@ -56,7 +56,7 @@ TEST(CircleTests, checkSetNegativeRadius) {
 }
 
 TEST(CircleTests, checkSetZeroFerence) {
-    Circle c;
+    Circle c = Circle(1.0);
     c.setFerence(0.0);
     EXPECT_DOUBLE_EQ(c.getFerence(), 0.0);
     EXPECT_DOUBLE_EQ(c.getRadius(), 0.0);
@@ -64,7 +64,7 @@ TEST(CircleTests, checkSetZeroFerence) {
 }
 
 TEST(CircleTests, checkSetSmallFerence) {
-    Circle c;
+    Circle c = Circle(1.0);
     c.setFerence(19.0);
     EXPECT_DOUBLE_EQ(c.getFerence(), 19.0);
     EXPECT_DOUBLE_EQ(c.getRadius(), 19.0 / (2 * PI));
@@ -72,7 +72,7 @@ TEST(CircleTests, checkSetSmallFerence) {
 }
 
 TEST(CircleTests, checkSetHugeFerence) {
-    Circle c;
+    Circle c = Circle(1.0);
     c.setFerence(95678.193);
     EXPECT_DOUBLE_EQ(c.getFerence(), 95678.193);
     EXPECT_DOUBLE_EQ(c.getRadius(), 95678.193 / (2 * PI));
@@ -85,7 +85,7 @@ TEST(CircleTests, checkSetNegativeFerence) {
 }
 
 TEST(CircleTests, checkSetZeroArea) {
-    Circle c;
+    Circle c = Circle(1.0);
     c.setArea(0.0);
     EXPECT_DOUBLE_EQ(c.getArea(), 0.0);
     EXPECT_DOUBLE_EQ(c.getRadius(), 0.0);
@@ -93,7 +93,7 @@ TEST(CircleTests, checkSetZeroArea) {
 }
 
 TEST(CircleTests, checkSetSmallArea) {
-    Circle c;
+    Circle c = Circle(1.0);
     c.setArea(123.4);
     EXPECT_DOUBLE_EQ(c.getArea(), 123.4);
     EXPECT_DOUBLE_EQ(c.getRadius(), sqrt(123.4 / PI));
@@ -101,7 +101,7 @@ TEST(CircleTests, checkSetSmallArea) {
 }
 
 TEST(CircleTests, checkSetHugeArea) {
-    Circle c;
+    Circle c = Circle(1.0);
     c.setArea(11351.151);
     EXPECT_DOUBLE_EQ(c.getArea(), 11351.151);
     EXPECT_DOUBLE_EQ(c.getRadius(), sqrt(11351.151 / PI));
