@@ -1,7 +1,9 @@
 // Copyright 2024 Chuvashov Andrey
+#include <stdexcept>
 #include "tasks.h"
 
 double RopeTask(double extraLength) {
+    if (extraLength < 0) throw std::logic_error("invalid error");
     const double eRadius = 6378.1;
     Circle oldCircleLength = Circle(eRadius);
     Circle newCircleLength = Circle(eRadius + extraLength / 1000);

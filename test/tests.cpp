@@ -4,9 +4,10 @@
 #include "tasks.h"
 
 const double PI = 3.14159;
+const double epsilon = 1e-5;
 
 TEST(CircleTests, checkNoRadius) {
-    Circle c = Circle(1.0);
+    Circle c = Circle(0.0);
     EXPECT_DOUBLE_EQ(c.getRadius(), 0.0);
     EXPECT_DOUBLE_EQ(c.getFerence(), 0.0);
     EXPECT_DOUBLE_EQ(c.getArea(), 0.0);
@@ -118,15 +119,15 @@ TEST(TasksTests, RopeTaskNegativeParams) {
 }
 
 TEST(TasksTests, RopeTaskSmall) {
-    EXPECT_EQ(RopeTask(1.0), 40.07475);
+    EXPECT_NEAR(RopeTask(1.0), 40.07475, epsilon);
 }
 
 TEST(TasksTests, RopeTaskMiddle) {
-    EXPECT_EQ(RopeTask(100.0), 4007.50645);
+    EXPECT_NEAR(RopeTask(100.0), 4007.50645, epsilon);
 }
 
 TEST(TasksTests, RopeTaskHuge) {
-    EXPECT_EQ(RopeTask(10000.0), 401061.66258);
+    EXPECT_NEAR(RopeTask(10000.0), 401061.66258, epsilon);
 }
 
 TEST(TasksTests, SwimmingPoolTaskNegativeParams) {
@@ -134,13 +135,13 @@ TEST(TasksTests, SwimmingPoolTaskNegativeParams) {
 }
 
 TEST(TasksTests, SwimmingPoolTaskSmall) {
-    EXPECT_EQ(SwimmingPoolTask(3.0, 1.0), 72256.57);
+    EXPECT_NEAR(SwimmingPoolTask(3.0, 1.0), 72256.57, epsilon);
 }
 
 TEST(TasksTests, SwimmingPoolTaskMiddle) {
-    EXPECT_EQ(SwimmingPoolTask(60.0, 3.0), 1950927.39);
+    EXPECT_NEAR(SwimmingPoolTask(60.0, 3.0), 1950927.39, epsilon);
 }
 
 TEST(TasksTests, SwimmingPoolTaskHuge) {
-    EXPECT_EQ(SwimmingPoolTask(90.0, 5.0), 4099774.95);
+    EXPECT_NEAR(SwimmingPoolTask(90.0, 5.0), 4099774.95, epsilon);
 }
